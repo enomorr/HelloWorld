@@ -32,12 +32,10 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    
-- task: UseDotNet@2
+- task: PublishBuildArtifacts@1
   inputs:
-    command: publish
-    publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: True
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'enotest'
+    publishLocation: 'Container'
     
 
