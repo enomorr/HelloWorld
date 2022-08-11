@@ -39,3 +39,6 @@ steps:
     publishWebProjects: True
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
+- steps:
+  publish: $(System.DefaultWorkingDirectory)/bin/WebApp
+  artifact: WebApp
